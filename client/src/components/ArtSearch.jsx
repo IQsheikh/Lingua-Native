@@ -1,5 +1,5 @@
 import { useState } from "react";
-import App from "../App.css"; 
+import App from "../App.css?inline"; 
 
 function ArtSearch({art}) {
   const [isActive, setIsActive] = useState([false, false, false, false, false, false]);
@@ -35,7 +35,7 @@ function ArtSearch({art}) {
        <div className="text">
 
        { isActive[item.id] &&  <div> <p> 
-         <b className="title"style={{fontSize:"xxxLarge", position:"absolute", right: "300px", position:"center", fontFamily:"serif"}} >{item.title}</b>
+         <b className="title"style={{fontSize:"xxxLarge", position:"absolute", right: "300px", fontFamily:"serif"}} >{item.title}</b>
        </p>
        <p>   
        <b className="date" style={{fontSize: "large", position:"relative", right:"-200px", bottom:"-100px"}}> ~{item.date}~</b>
