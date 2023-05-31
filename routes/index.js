@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const db = require("../model/database.js"); // Import the function to interact with the database
+const db = require("../model/helper.js"); // Import the function to interact with the database
 const app = express();
 const port = 5000;
 
@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 // GET paintings route
-router.get('/api/paintings', function(req, res, next) {
+router.get('/paintings', function(req, res, next) {
   // code to fetch paintings from the database
   db("SELECT * FROM paintings")
     .then(results => {
