@@ -1,4 +1,4 @@
-
+/*
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import ArtSearch from "./components/ArtSearch";
@@ -33,9 +33,9 @@ function App() {
  
 
  
-   export default App; 
+   export default App; */
   
-/*
+
    
 //CODE BY SERENA
 import React, { useState } from "react";
@@ -58,7 +58,7 @@ function App() {
 
  
    export default App;
-*/
+
   
   
 

@@ -59,7 +59,6 @@ export default ArtSearch;
 */
 
 import { useState } from "react";
-import React from "./ArtSearch.css";
 
 function ArtSearch({art}) {
   console.log(art);
