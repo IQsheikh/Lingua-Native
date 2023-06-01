@@ -1,3 +1,5 @@
+
+/*
 import { useState } from "react";
 import App from "../App.css?inline"; 
 
@@ -54,3 +56,61 @@ function ArtSearch({art}) {
 
 
 export default ArtSearch; 
+*/
+
+import { useState } from "react";
+import React from "./ArtSearch.css";
+
+function ArtSearch({art}) {
+  console.log(art);
+
+  const [isActive, setIsActive] = useState([false, false, false, false, false, false]);
+   
+  function handleShow(id) {
+    let newArray = [...isActive]
+   
+    if(newArray[id] === false) {
+      newArray[id] = true;
+    }
+    else if(newArray[id] === true) {
+      newArray[id] = false;
+    } 
+     setIsActive(newArray)
+
+     console.log(isActive);
+  }
+
+  return (
+    <div>
+      <h1>Art Search</h1>
+        
+      {art.map( item => (
+        <li key={item.id} >
+          <div className="all-thing">
+            <img 
+              className="img"
+              src={item.url}
+              alt=""
+            />
+            <button className="btn" onClick={() => handleShow(item.id)}>Check description</button>
+            <div className="text">
+              {isActive[item.id] &&  
+                <div>
+                  <p>
+                    <b className="title">{item.title}</b>
+                  </p>
+                  <p>   
+                    <b className="date">~{item.date}~</b>
+                  </p>
+                  <p className="description">"{item.description}"</p> 
+                </div>
+              }
+            </div>
+          </div>
+        </li> 
+      ))}
+    </div>
+  );
+} 
+
+export default ArtSearch;
